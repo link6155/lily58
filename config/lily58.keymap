@@ -51,17 +51,17 @@
 
 		raise_layer {
 // ------------------------------------------------------------------------------------------------------------
-// | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
+// | BTCLR | BT0 | BT1 |  BT2 |  BT3 |  BT4 |                   | BTCLR| BT0   |  BT1  | BT2  | BT3   |  BT4  |
 // |       |     |     |      |      |      |                   |      |       |  UP   |      |       |  "_"  |
 // |       |     |     |      |      |      |                   |      |  LEFT |  DOWN | RIGHT|       |  EQUAL|
 // |       |     |     |      |      |      |        |  |       |      |       |       |  [   |   ]   |       |
 //                     |      |      |      |        |  |       |      | VOL_UP| VOL_DN|
 			bindings = <
-&bt BT_CLR  &bt BT_SEL 0  	&bt BT_SEL 1 	  &bt BT_SEL 2   	&bt BT_SEL 3    &bt BT_SEL 4                 &trans   &trans    	&trans    		&trans    &trans    &trans
-&trans		&trans 		  	&trans 		 	  &trans  			&trans  		&trans                       &trans   &trans    	&kp UP    		&trans    &trans    &kp UNDER
-&trans		&trans 		  	&trans 		  	  &trans  		  	&trans  		&trans                       &trans   &kp LEFT  	&kp DOWN  		&kp RIGHT &trans	  &kp EQUAL
-&trans     &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans     		&trans    &trans   &trans    &trans   &trans		&trans    		&kp LBKT  &kp RBKT    &trans
-                       						  &trans  			&trans 		    &trans    &trans   &trans    &trans   &kp C_VOL_UP  &kp C_VOL_DN
+&bt BT_CLR  &bt BT_SEL 0  	&bt BT_SEL 1 	  &bt BT_SEL 2   	&bt BT_SEL 3    &bt BT_SEL 4                 &bt BT_CLR		&bt BT_SEL 0  	  &bt BT_SEL 1 	    &bt BT_SEL 2   	&bt BT_SEL 3    &bt BT_SEL 4   
+&trans		&trans 		  	&trans 		 	  &trans  			&trans  		&trans                       &trans   		&trans    		  &kp UP    		&trans    		&trans    		&kp UNDER
+&trans		&trans 		  	&trans 		  	  &trans  		  	&trans  		&trans                       &trans   		&kp LEFT  		  &kp DOWN  		&kp RIGHT 		&trans	 		&kp EQUAL
+&trans     &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans     		&trans    &trans   &trans    &trans   		&trans			  &trans    		&kp LBKT  		&kp RBKT    	&trans
+                       						  &trans  			&trans 		    &trans    &trans   &trans    &trans  		&kp C_VOL_UP  	  &kp C_VOL_DN
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
